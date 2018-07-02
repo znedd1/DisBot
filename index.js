@@ -80,13 +80,13 @@ client.on('message', message => {
         else if (messagecont === "!show") {
 
             var everything = "ab";
-
+            
             var readTextFile = require('read-text-file');
 
             var contentsPromise = readTextFile.read('text.txt');
             everything = readTextFile.readSync('text.txt');
 
-            var all = everything.split('$v$');
+            var all = process.env.TEXT.split('$v$');
             var amount = [];
             var i;
             for (i = 0; i < all.length; i++) {
