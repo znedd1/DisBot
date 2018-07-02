@@ -68,14 +68,14 @@ client.on('message', message => {
         if (messagecont === "!vote" && rest !== "") {
 
             message.channel.send('Your vote has been counted.');
+            process.env.TEXT = process.env.TEXT.concat('$v$' + rest);
+           // fs.appendFile("text.txt", '$v$' + rest, function (err) {
+            //    if (err) {
+             //       return console.log(err);
+           //     }
 
-            fs.appendFile("text.txt", '$v$' + rest, function (err) {
-                if (err) {
-                    return console.log(err);
-                }
-
-                console.log("The file was saved!");
-            });
+           //     console.log("The file was saved!");
+           // });
         }
         else if (messagecont === "!show") {
 
